@@ -1,6 +1,7 @@
 package com.happybz.sell.service;
 
 import com.happybz.sell.dataobject.ProductInfo;
+import com.happybz.sell.dto.CartDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -8,8 +9,6 @@ import java.util.List;
 
 /**
  * 商品
- * Created by 廖师兄
- * 2017-05-09 17:27
  */
 public interface ProductService {
 
@@ -26,7 +25,9 @@ public interface ProductService {
     ProductInfo save(ProductInfo productInfo);
 
     //加库存
+    void increaseStock(List<CartDTO> cartDTOList);
 
     //减库存
+    void decreaseStock(List<CartDTO> cartDTOList);
 
 }
